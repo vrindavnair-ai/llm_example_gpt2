@@ -1,0 +1,87 @@
+
+1) cd "Project folder Location"
+2) git init
+3) cat > .gitignore << 'EOF'
+# Virtual environment
+llm_env/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Model files (these can be large)
+*.bin
+*.pt
+*.pth
+gpt2-finetuned/
+gpt2-finetuned-final/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# MacOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+EOF
+
+
+4) git add .
+5) git commit -m "Initial commit: LLM fine-tuning example"
+"""
+Step 2: Create GitHub Repository
+
+Go to github.com and log in
+Click the "+" button in top right → "New repository"
+Name it (e.g., llm-finetuning-example)
+Choose Public or Private
+Don't initialize with README (since you already have files)
+Click "Create repository"""
+
+# Add your GitHub repository as remote (replace YOUR_USERNAME)
+git remote add origin https://github.com/YOUR_USERNAME/llm-finetuning-example.git
+
+# Push your code
+git branch -M main
+git push -u origin main
+
+""to add read me"
+""cat > README.md << 'EOF'
+# LLM Fine-tuning Example
+
+A simple example of fine-tuning GPT-2 using LoRA on Apple Silicon (M4 Pro).
+
+## Setup
+```bash
+python3 -m venv llm_env
+source llm_env/bin/activate
+pip install torch transformers datasets accelerate peft
+```
+
+## Run
+```bash
+python simple_example.py
+```
+
+## Requirements
+- Apple Silicon Mac (M1/M2/M3/M4)
+- Python 3.11+
+- 24GB RAM recommended
+EOF""
+
+git add README.md
+git commit -m "Add README"
+git push
+
+"""when you make updates
+git add .
+git commit -m "Description of changes"
+git push
+"""
+
