@@ -1,0 +1,27 @@
+# Virtual environment
+llm_env/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Model files (these can be large)
+*.bin
+*.pt
+*.pth
+gpt2-finetuned/
+gpt2-finetuned-final/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# MacOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
